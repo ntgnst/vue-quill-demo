@@ -33,19 +33,19 @@ export default {
   },
   methods: {
     onEditorReady (quill) {
-      console.log('editor ready!', quill)
+      console.log('editor ready!', {quill})
     },
     onEditorBlur(quill) {
-      console.log('editor blur!', quill)
+      console.log('editor blur!', {quill})
     },
     onEditorFocus(quill){
-      console.log('editor focus!', quill)
+      console.log('editor focus!', {quill})
     },
     onEditorInput(quill){
-      console.log('editor input!', quill)
+      console.log('editor input!', {quill})
     },
     onEditorChange({ quill, html, text }){
-      console.log('editor change!', quill, html, text)
+      console.log('editor change!', { quill, html, text })
     },
   }
 }
