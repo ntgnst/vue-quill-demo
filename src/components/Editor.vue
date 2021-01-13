@@ -104,7 +104,8 @@
             let html = this.$refs.editor.children[0].innerHTML
             const quill = this.quill
             const text = this.quill.getText()
-            if (html === '<p><br></p>') html = ''
+            console.log({text})
+            if (html === '<p><br></p>') html = '';
             this._content = html
             this.$emit('input', this._content)
             this.$emit('change', { html, text, quill })
