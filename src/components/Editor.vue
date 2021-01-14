@@ -43,7 +43,7 @@
         // eslint-disable-next-line vue/no-reserved-keys
         _options: {},
         // eslint-disable-next-line vue/no-reserved-keys
-        _content: 'asdasdads',
+        _content: '',
         defaultOptions
       }
     },
@@ -104,7 +104,6 @@
             let html = this.$refs.editor.children[0].innerHTML
             const quill = this.quill
             const text = this.quill.getText()
-            console.log({text})
             if (html === '<p><br></p>') html = '';
             this._content = html
             this.$emit('input', this._content)
@@ -122,7 +121,8 @@
         if (this.quill) {
           if (newVal && newVal !== this._content) {
             this._content = newVal
-            this.quill.pasteHTML(newVal)
+            const delta = this.quill.clipboard.convert(newVal)
+            this.quill.setContents(delta)
           } else if(!newVal) {
             this.quill.setText('')
           }
@@ -134,7 +134,8 @@
         if (this.quill) {
           if (newVal && newVal !== this._content) {
             this._content = newVal
-            this.quill.pasteHTML(newVal)
+            const delta = this.quill.clipboard.convert(newVal)
+            this.quill.setContents(delta)
           } else if(!newVal) {
             this.quill.setText('')
           }
