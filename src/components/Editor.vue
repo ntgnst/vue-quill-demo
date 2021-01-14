@@ -145,7 +145,7 @@
       // eslint-disable-next-line no-unused-vars
       disabled(newVal, oldVal) {
         if (this.quill) {
-          this.quill.enable(!newVal)
+          this.quill.enable(!newVal);
         }
       }
     }
