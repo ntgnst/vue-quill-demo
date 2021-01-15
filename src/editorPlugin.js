@@ -1,5 +1,6 @@
 import _Quill from 'quill';
-import Editor from '../src/components/Editor.vue';
+import Editor from './components/Editor.vue';
+import 'quill-paste-smart';
 
 const Quill = window ? window.Quill : _Quill;
 

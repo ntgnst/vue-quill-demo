@@ -20,6 +20,13 @@
   const defaultOptions = {
     theme: 'snow',
     modules: {
+      clipboard: {
+        allowed: {
+          tags: ['a', 'b', 'strong', 'u', 's', 'i', 'p', 'br', 'ul', 'ol', 'li', 'span', 'img'],
+          attributes: ['href', 'rel', 'target', 'class', 'name']
+        },
+        keepSelection: true,
+      },
       history: {
       delay: 250,
       maxStack: 1000,

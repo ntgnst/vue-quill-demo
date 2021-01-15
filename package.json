@@ -10,12 +10,13 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "dedent": "^0.7.0",
+    "quill-paste-smart": "^1.2.1",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.11",
-    "vue-composition-api": "0.0.1",
     "vue-quill-editor": "^3.0.6"
   },
   "devDependencies": {
+    "@vue/composition-api": "1.0.0-beta.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
