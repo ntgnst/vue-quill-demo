@@ -1,9 +1,14 @@
 <template>
-<div class="ql-bound" ref="bound">
+<div>
+  <div class="ql-bound" ref="bound">
   <div class="quill-editor">
-    <slot name="toolbar"></slot>
+    <slot name="toolbar">
+      <slot name="toolbar-extension"></slot>
+    </slot>
     <div ref="editor"></div>
   </div>
+</div>
+
 </div>
   
 </template>
@@ -15,6 +20,11 @@
   const defaultOptions = {
     theme: 'snow',
     modules: {
+      history: {
+      delay: 250,
+      maxStack: 1000,
+      userOnly: false
+    },
       toolbar: [
         ['bold', 'italic', 'underline', 'strike'],
         ['blockquote', 'code-block'],
@@ -101,7 +111,7 @@
           // Update model if text changes
           // eslint-disable-next-line no-unused-vars
           this.quill.on('text-change', (delta, oldDelta, source) => {
-            let html = this.$refs.editor.children[0].innerHTML
+            let html = this.quill.root.innerHTML
             const quill = this.quill
             const text = this.quill.getText()
             if (html === '<p><br></p>') html = '';
