@@ -1,6 +1,6 @@
-import _Quill from 'quill';
+import _Quill from '../dist/quill';
 import Editor from './components/Editor.vue';
-import 'quill-paste-smart';
+
 
 const Quill = window ? window.Quill : _Quill;
 

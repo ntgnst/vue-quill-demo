@@ -3,9 +3,9 @@ import App from './App.vue';
 
 import VueQuillEditor from './editorPlugin';
 
-import 'quill/dist/quill.core.css';
-import 'quill/dist/quill.snow.css';
-import 'quill/dist/quill.bubble.css';
+import '../dist/quill.core.css';
+import '../dist/quill.snow.css';
+import '../dist/quill.bubble.css';
 
 Vue.use(VueQuillEditor, /* { global Opt. } */);
 Vue.config.productionTip = false

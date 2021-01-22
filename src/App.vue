@@ -29,8 +29,6 @@
 </template>
 
 <script>
-
-import dedent from 'dedent';
 import Omega from './components/Omega.vue';
 import Undo from './components/Undo.vue';
 import Redo from './components/Redo.vue';
@@ -40,8 +38,8 @@ export default {
   name: 'App',
   data() {
     return {
-      content: 'asd',
-      image: dedent`<img class="asd" src='https://pbs.twimg.com/media/EqLtzJtXcAUlzUb?format=jpg&name=small' />`,
+      content: `<img data-class="asd" src='https://pbs.twimg.com/media/EqLtzJtXcAUlzUb?format=jpg&name=small' />`,
+      image: `<img data-class="asd" src='https://pbs.twimg.com/media/EqLtzJtXcAUlzUb?format=jpg&name=small' />`,
       isReady: false,
       quill: null
     }

@@ -17,15 +17,12 @@ export default {
       required: false
     }
   },
-  mounted() {
-    console.log(this.quill);
-  },
   methods: {
     buttonClick() {
       var range = this.quill.getSelection();
 
       if (range) {
-         this.quill.clipboard.dangerouslyPasteHTML(range.index, this.image, "user");
+         this.quill.clipboard.dangerouslyPasteHTML(range.index, `<img class="oldu" arrr="bu olmayacak" data-class="asd" src='https://pbs.twimg.com/media/EqLtzJtXcAUlzUb?format=jpg&name=small' />`, "user");
       }
     }
   }

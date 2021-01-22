@@ -15,18 +15,12 @@
 
 <script>
   // require sources
-  import _Quill from 'quill';
+  import _Quill from '../../dist/quill';
+
   const Quill = window.Quill || _Quill;
   const defaultOptions = {
     theme: 'snow',
     modules: {
-      clipboard: {
-        allowed: {
-          tags: ['a', 'b', 'strong', 'u', 's', 'i', 'p', 'br', 'ul', 'ol', 'li', 'span', 'img'],
-          attributes: ['href', 'rel', 'target', 'class', 'name']
-        },
-        keepSelection: true,
-      },
       history: {
       delay: 250,
       maxStack: 1000,
@@ -101,7 +95,7 @@
           this.quill.enable(false)
           // Set editor content
           if (this.value || this.content) {
-            this.quill.pasteHTML(this.value || this.content)
+            this.quill.setText(this.value || this.content)
           }
           // Disabled editor
           if (!this.disabled) {
@@ -118,16 +112,16 @@
           // Update model if text changes
           // eslint-disable-next-line no-unused-vars
           this.quill.on('text-change', (delta, oldDelta, source) => {
-            let html = this.quill.root.innerHTML
-            const quill = this.quill
-            const text = this.quill.getText()
+            let html = this.quill.root.innerHTML;
+            const quill = this.quill;
+            const text = this.quill.getText();
             if (html === '<p><br></p>') html = '';
-            this._content = html
-            this.$emit('input', this._content)
-            this.$emit('change', { html, text, quill })
+            this._content = html;
+            this.$emit('input', this._content);
+            this.$emit('change', { html, text, quill });
           })
           // Emit ready event
-          this.$emit('ready', this.quill)
+          this.$emit('ready', this.quill);
         }
       }
     },
